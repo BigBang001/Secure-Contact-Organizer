@@ -24,6 +24,11 @@ The Secure Contact Organizer project aims to provide users with a secure and eff
 
 - **Robust Password Recovery:** Implement a password recovery mechanism that allows users to regain access to their account in case they forget their password, without compromising security.
 
+- **Default Username and Password:** Upon the first run of the application, use the following default credentials to log in:
+Username: user123
+Password: password123
+It's recommended to change the default password after logging in for the first time to ensure the security of your account.  
+
 ### Technical Details
 
 - **Programming Language:** C++
