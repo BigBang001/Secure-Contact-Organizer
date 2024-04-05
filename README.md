@@ -43,7 +43,7 @@ To enhance the functionality and security of the Secure Contact Organizer, consi
 
 1. **Clone the Repository:**
    
-   git clone https://github.com/BigBang001/secure-contact-manager.py
+   git clone https://github.com/BigBang001/secure-contact-manager.cpp
    
 2. **Navigate to the Secure Contact Organizer Directory:**
 
