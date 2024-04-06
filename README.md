@@ -52,11 +52,11 @@ To enhance the functionality and security of the Secure Contact Organizer, consi
    
 2. **Navigate to the Secure Contact Organizer Directory:**
 
-   cd cpp-projects/secure-contact-organizer
+   cd cpp-projects/secure-contact-manager
    
 3. **Compile and Run the Application:**
 
-   g++ secure_contact_organizer.cpp -o secure_contact_organizer./Secure_Contact_Manager
+   g++ secure_contact_organizer.cpp -o secure_contact_manager./secure_contact_manager
    
 ### Contributing
 If you'd like to contribute to the Secure Contact Organizer project, please follow these steps:
