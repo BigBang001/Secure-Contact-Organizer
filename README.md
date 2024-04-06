@@ -48,7 +48,7 @@ To enhance the functionality and security of the Secure Contact Organizer, consi
 
 1. **Clone the Repository:**
    
-   git clone https://github.com/BigBang001/secure_contact_manager.cpp
+   git clone https://github.com/BigBang001/Secure_Contact_Manager.git
    
 2. **Navigate to the Secure Contact Organizer Directory:**
 
@@ -56,7 +56,7 @@ To enhance the functionality and security of the Secure Contact Organizer, consi
    
 3. **Compile and Run the Application:**
 
-   g++ secure_contact_organizer.cpp -o secure_contact_manager./secure_contact_manager
+   g++ secure_contact_manager.cpp -o secure_contact_manager./secure_contact_manager
    
 ### Contributing
 If you'd like to contribute to the Secure Contact Organizer project, please follow these steps:
