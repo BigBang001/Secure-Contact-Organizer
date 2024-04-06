@@ -1,4 +1,4 @@
-<h3 align="center">Secure Contact Organizer</h3>
+<h3 align="center">Secure Contact Manager</h3>
 
 <p align="center">
   <em>Step into the world of secure contact management with Secure Contact Organizer, crafted using C++ and STL. Seamlessly manage your contacts while ensuring robust security features and customizable organization options.</em>
@@ -56,7 +56,7 @@ To enhance the functionality and security of the Secure Contact Organizer, consi
    
 3. **Compile and Run the Application:**
 
-   g++ secure_contact_organizer.cpp -o secure_contact_organizer./secure_contact_organizer
+   g++ secure_contact_organizer.cpp -o secure_contact_organizer./Secure_Contact_Manager
    
 ### Contributing
 If you'd like to contribute to the Secure Contact Organizer project, please follow these steps:
