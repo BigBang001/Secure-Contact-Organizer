@@ -1,67 +1,88 @@
 #include <iostream>
 #include <regex>
-#include "contact.h"
+#include <vector>
 
-// Contact base class constructor
-Contact::Contact(const std::string& name, const std::string& phone)
-    : name(name), phone(phone) {}
+class Contact {
+protected:
+    std::string name;
+    std::string phone;
 
-// PersonalContact constructor
-PersonalContact::PersonalContact(const std::string& name, const std::string& phone)
-    : Contact(name, phone) {}
+public:
+    Contact(const std::string& name, const std::string& phone)
+        : name(name), phone(phone) {}
 
-// Display personal contact information
-void PersonalContact::display() const {
-    std::cout << "Personal Contact: Name - " << name << ", Phone - " << phone << std::endl;
-}
+    virtual void display() const = 0;
+    virtual void share() const = 0;
+    virtual bool validate() const = 0;
 
-// Share personal contact information
-void PersonalContact::share() const {
-    std::cout << "Sharing Personal Contact: " << name << " via email..." << std::endl;
-}
+    const std::string& getName() const {
+        return name;
+    }
 
-// Validate personal contact information
-bool PersonalContact::validate() const {
-    std::regex phoneRegex(R"(\d{10})");
-    return std::regex_match(phone, phoneRegex);
-}
+    const std::string& getPhone() const {
+        return phone;
+    }
+};
 
-// BusinessContact constructor
-BusinessContact::BusinessContact(const std::string& name, const std::string& phone, const std::string& company)
-    : Contact(name, phone), company(company) {}
+class PersonalContact : public Contact {
+public:
+    PersonalContact(const std::string& name, const std::string& phone)
+        : Contact(name, phone) {}
 
-// Display business contact information
-void BusinessContact::display() const {
-    std::cout << "Business Contact: Name - " << name << ", Phone - " << phone << ", Company - " << company << std::endl;
-}
+    void display() const override {
+        std::cout << "Personal Contact: Name - " << name << ", Phone - " << phone << std::endl;
+    }
 
-// Share business contact information
-void BusinessContact::share() const {
-    std::cout << "Sharing Business Contact: " << name << " via email..." << std::endl;
-}
+    void share() const override {
+        std::cout << "Sharing Personal Contact: " << name << " via email..." << std::endl;
+    }
 
-// Validate business contact information
-bool BusinessContact::validate() const {
-    std::regex phoneRegex(R"(\d{10})");
-    return (std::regex_match(phone, phoneRegex) && !company.empty());
-}
+    bool validate() const override {
+        std::regex phoneRegex(R"(\d{10})");
+        return std::regex_match(phone, phoneRegex);
+    }
+};
 
-// FamilyContact constructor
-FamilyContact::FamilyContact(const std::string& name, const std::string& phone, const std::string& relation)
-    : Contact(name, phone), relation(relation) {}
+class BusinessContact : public Contact {
+private:
+    std::string company;
 
-// Display family contact information
-void FamilyContact::display() const {
-    std::cout << "Family Contact: Name - " << name << ", Phone - " << phone << ", Relation - " << relation << std::endl;
-}
+public:
+    BusinessContact(const std::string& name, const std::string& phone, const std::string& company)
+        : Contact(name, phone), company(company) {}
 
-// Share family contact information
-void FamilyContact::share() const {
-    std::cout << "Sharing Family Contact: " << name << " via text message..." << std::endl;
-}
+    void display() const override {
+        std::cout << "Business Contact: Name - " << name << ", Phone - " << phone << ", Company - " << company << std::endl;
+    }
 
-// Validate family contact information
-bool FamilyContact::validate() const {
-    std::regex phoneRegex(R"(\d{10})");
-    return (std::regex_match(phone, phoneRegex) && !relation.empty());
-}
+    void share() const override {
+        std::cout << "Sharing Business Contact: " << name << " via email..." << std::endl;
+    }
+
+    bool validate() const override {
+        std::regex phoneRegex(R"(\d{10})");
+        return (std::regex_match(phone, phoneRegex) && !company.empty());
+    }
+};
+
+class FamilyContact : public Contact {
+private:
+    std::string relation;
+
+public:
+    FamilyContact(const std::string& name, const std::string& phone, const std::string& relation)
+        : Contact(name, phone), relation(relation) {}
+
+    void display() const override {
+        std::cout << "Family Contact: Name - " << name << ", Phone - " << phone << ", Relation - " << relation << std::endl;
+    }
+
+    void share() const override {
+        std::cout << "Sharing Family Contact: " << name << " via text message..." << std::endl;
+    }
+
+    bool validate() const override {
+        std::regex phoneRegex(R"(\d{10})");
+        return (std::regex_match(phone, phoneRegex) && !relation.empty());
+    }
+};
