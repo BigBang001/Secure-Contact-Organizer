@@ -1,4 +1,4 @@
-<h3 align="center">Secure Contact Manager</h3>
+<h3 align="center">Secure Contact Organizer</h3>
 
 <p align="center">
   <em>Step into the world of secure contact management with Secure Contact Organizer, crafted using C++ and STL. Seamlessly manage your contacts while ensuring robust security features and customizable organization options.</em>
